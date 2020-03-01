@@ -1,0 +1,5 @@
+{
+    "Customer": {
+        "mongoURI": "mongodb+srv://nhan99dn:Hanhnhan160315@cluster0-sevbx.mongodb.net/woeid?retryWrites=true&w=majority"
+    }
+}

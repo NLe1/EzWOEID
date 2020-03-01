@@ -2,7 +2,8 @@ client/yarn.lock
 client/README.md
 client/yarn-error.log
 
-server/package-lock.json
-server/yarn.lock
-server/WOEID.json
-server/config
+package-lock.json
+yarn.lock
+WOEID.json
+/node_modules
+EzWOEID.pem

@@ -8,6 +8,7 @@ class Input extends Component {
             <div className="container">
                 <form onSubmit={handleChange}>
                     <div className="form-group">
+                        <p className="heading">TWITTER... PLEASE DO NOT USE WOEID IN YOUR API, PLEASE?</p>
                         <p className="heading">SEARCH WOEID BY LOCATION</p>
                         <input type="text" onChange={handleChange} value={region} className="form-control" placeholder="e.g Paris" />
                     </div>

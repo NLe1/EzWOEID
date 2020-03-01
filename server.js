@@ -4,7 +4,6 @@ const config = require('config');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
-require('dotenv').config();
 
 const PORT = process.env.PORT || 5000
 

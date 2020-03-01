@@ -51,7 +51,7 @@ class App extends Component {
         loading: true,
       });
       const { region, page } = this.state;
-      axios.get('http://localhost:5000/region', {
+      axios.get('/region', {
         params: {
           name: region, page
         }

@@ -7,3 +7,4 @@ yarn.lock
 WOEID.json
 /node_modules
 EzWOEID.pem
+/config

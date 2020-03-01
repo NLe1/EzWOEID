@@ -101,7 +101,7 @@ class App extends Component {
           }}
         >
           {
-            this.state.data.length == 0 && !this.state.loading ? (
+            this.state.data.length === 0 && !this.state.loading ? (
               <Fragment>
                 <PacmanLoader
                   size={30}

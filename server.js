@@ -9,7 +9,7 @@ require('dotenv').config();
 const PORT = process.env.PORT || 5000
 
 const app = express()
-const db = process.env.mongoURI || config.get("Customer.mongoURI");
+const db = process.env.MONGO_URI || config.get("Customer.mongoURI");
 
 app.use(cors())
 app.use("/region", require('./routes/region'));

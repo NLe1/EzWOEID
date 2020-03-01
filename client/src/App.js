@@ -26,37 +26,40 @@ class App extends Component {
   handleChange = async (e) => {
     e.persist();
     e.preventDefault();
-    await this.setState({ region: e.target.value, page: 1, nextPage: 1, data: [], globalTimeOut: null, loading: true });
-
-    if (this.state.globalTimeOut) { clearTimeout(this.state.globalTimeOut); }
+    await this.setState({ region: e.target.value, page: 1, nextPage: 1, data: [], loading: true });
     const { region, page } = this.state;
 
-    await this.setState({
-      globalTimeOut: setTimeout(() => {
-        axios.get('http://localhost:5000/region', {
-          params: {
-            name: region, page
-          }
-        }).then(res => {
-          console.log(res.data)
-          this.setState({ data: res.data.docs, nextPage: res.data.nextPage, loading: false });
-        }).catch(err => console.log(err))
-      }, 1500)
-    });
+    console.log("handle change")
+    // await this.setState({
 
-  }
-
-
-  fetchMore = async () => {
-    const { region, page } = this.state;
     axios.get('http://localhost:5000/region', {
       params: {
         name: region, page
       }
     }).then(res => {
       console.log(res.data)
-      this.setState({ data: [...this.state.data, ...res.data.docs], loading: false, nextPage: res.data.nextPage });
+      this.setState({ data: res.data.docs, nextPage: res.data.nextPage, loading: false });
     }).catch(err => console.log(err));
+  }
+
+
+  fetchMore = async () => {
+    if (!this.state.loading) {
+      console.log("fetch more")
+      await this.setState({
+        page: this.state.nextPage,
+        loading: true,
+      });
+      const { region, page } = this.state;
+      axios.get('http://localhost:5000/region', {
+        params: {
+          name: region, page
+        }
+      }).then(res => {
+        console.log(res.data)
+        this.setState({ data: [...this.state.data, ...res.data.docs], loading: false, nextPage: res.data.nextPage });
+      }).catch(err => console.log(err));
+    }
   }
 
   handleScroll = async () => {
@@ -67,17 +70,16 @@ class App extends Component {
       const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
       const windowBottom = windowHeight + window.pageYOffset;
       if (windowBottom >= docHeight) {
-        await this.setState({
-          page: this.state.nextPage,
-          loading: true,
-          globalTimeOut: null
-        });
-        setTimeout(() => this.fetchMore(), 1500);
+        this.fetchMore();
       }
     }
   }
 
   componentDidMount = () => {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount = () => {
     window.addEventListener("scroll", this.handleScroll);
   }
 
@@ -118,12 +120,11 @@ class App extends Component {
         >
           {
             this.state.loading ? <SyncLoader
-              size={50}
+              size={30}
               color={"white"}
             /> : null
           }
         </div>
-
       </div>
     );
   }

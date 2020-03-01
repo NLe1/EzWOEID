@@ -16,9 +16,11 @@ The project focus on connecting to mongoDB and setting up backend, in the future
 To run the project locally, you will need to either download or git clone.
 ```
 cd EzWOEID
-cd server
 yarn start
-cd ../client
+```
+Open another tab of terminal /git bash
+```
+cd client
 yarn start
 ```
 Open up browser and go to http://localhost:3000 and enjoy!

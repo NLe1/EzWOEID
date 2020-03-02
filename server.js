@@ -4,9 +4,9 @@ const config = require('config');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
+require('dotenv').config()
 
 const PORT = process.env.PORT || 5000
-
 const app = express()
 const db = process.env.MONGO_URI || config.get("Customer.mongoURI");
 

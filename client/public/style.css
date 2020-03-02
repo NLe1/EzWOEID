@@ -1,43 +1,42 @@
 body {
-    z-index: 0;
-    color: white;
-    font-family: monospace;
-    font-size: 20px;
-    background: url('https://media3.giphy.com/media/9xre0MdX20NtIRNudY/giphy.gif?cid=790b761114a01facc76f5bf089aa80ea03b891911e3a2d09&rid=giphy.gif') repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 100%;
+  z-index: 0;
+  color: white;
+  font-family: monospace;
+  font-size: 20px;
+  background: url("https://media3.giphy.com/media/9xre0MdX20NtIRNudY/giphy.gif?cid=790b761114a01facc76f5bf089aa80ea03b891911e3a2d09&rid=giphy.gif")
+    repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
 }
 
-
 #root {
-    z-index: 1;
-
+  z-index: 1;
 }
 
 .heading {
-    text-align: center;
-    font-size: 50px;
-    margin: 30px 30px;
+  text-align: center;
+  font-size: 2rem;
+  margin: 30px 30px;
 }
 
 .card {
-    background: #610664;
-    border-color: #69330d;
+  background: #610664;
+  border-color: #69330d;
 }
 
 .myBtn {
-    background: #69330d;
-    border-color: #69330d;
-    width: 100%;
-    border-radius: 5px;
-    height: 40px;
-    color: white;
+  background: #69330d;
+  border-color: #69330d;
+  width: 100%;
+  border-radius: 5px;
+  height: 40px;
+  color: white;
 }
 
 .myBtn:hover {
-    background: #462d1e;
-    border-color: #cc9167;
+  background: #462d1e;
+  border-color: #cc9167;
 }

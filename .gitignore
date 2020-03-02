@@ -8,3 +8,5 @@ WOEID.json
 /node_modules
 EzWOEID.pem
 /config
+.env
+populate.js

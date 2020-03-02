@@ -28,7 +28,7 @@ async function createTable(jsonString) {
 
 async function run(table) {
     await mongoose
-        .connect(db, {
+        .connect("mongodb://nhan99dn:Hanhnhan160315@ds051170.mlab.com:51170/heroku_4c5sr988", {
             useNewUrlParser: true,
             useCreateIndex: true,
             useUnifiedTopology: true

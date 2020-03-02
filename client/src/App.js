@@ -32,7 +32,7 @@ class App extends Component {
     console.log("handle change")
     // await this.setState({
 
-    axios.get('http://localhost:5000/region', {
+    axios.get('/region', {
       params: {
         name: region, page
       }

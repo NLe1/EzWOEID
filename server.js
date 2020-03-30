@@ -9,7 +9,6 @@ require('dotenv').config()
 const PORT = process.env.PORT || 5000
 const app = express()
 const db = process.env.MONGODB_URI || config.get("Customer.mongoURI");
-// const db = "mongodb://nhan99dn:<dbpassword>@ds051170.mlab.com:51170/heroku_4c5sr988";
 
 app.use(cors())
 app.use("/region", require('./routes/region'));
